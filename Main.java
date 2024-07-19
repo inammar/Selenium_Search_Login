@@ -20,6 +20,8 @@ public class Main {
         //loginTestNewUser();
         //loginTestRegisteredUser();
         //timeout(3000);
+
+        //testing of search field with different phrases
         String[] phrases = {"Car", "Shop", "Soup", "Girl", "Transfer"};
         for (int i = 0; i < phrases.length; i++) {
             searchTestPhrases(phrases[i]);
