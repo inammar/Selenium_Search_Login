@@ -59,9 +59,9 @@ public class Main {
         driver.findElement(By.cssSelector("input[name='Password']")).sendKeys("123**As");
         driver.findElement(By.cssSelector("input[value='Login']")).click();
         }
-    public static void searchTestPhrases(String phases) {
+    public static void searchTestPhrases(String phrases) {
         driver.findElement(By.cssSelector("input[id='search-page-box']")).click();
-        driver.findElement(By.cssSelector("input[id='search-page-box']")).sendKeys(phases);
+        driver.findElement(By.cssSelector("input[id='search-page-box']")).sendKeys(phrases);
         driver.findElement(By.cssSelector("input[id='search-page-box']")).sendKeys(Keys.ENTER);
         driver.findElement(By.cssSelector("input[id='search-page-box']")).clear();
 }
