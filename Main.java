@@ -27,12 +27,15 @@ public class Main {
             searchTestPhrases(phrases[i]);
         }
     }
+    
+    //setup of ChromeDriver
     public static void setup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+    //accepting the cookies
     public static void cookieAcceptance() {
         driver.get("website's address");
         wait.until(ExpectedConditions.elementToBeClickable(
@@ -40,6 +43,7 @@ public class Main {
         driver.findElement(By.xpath("//button[@aria-label='Accept']")).click();
     }
 
+    //login test as a new user
     public static void loginTestNewUser() {
         driver.findElement(By.linkText("login")).click();
         timeout(2000);
@@ -53,12 +57,16 @@ public class Main {
 
         System.out.println("Your registration is successful");
     }
+
+    //login test as a registered user
     public static void loginTestRegisteredUser () {
         driver.findElement(By.linkText("login")).click();
         driver.findElement(By.cssSelector("input[name='UserName']")).sendKeys("John789");
         driver.findElement(By.cssSelector("input[name='Password']")).sendKeys("123**As");
         driver.findElement(By.cssSelector("input[value='Login']")).click();
         }
+    
+    //search field test with various different phrases
     public static void searchTestPhrases(String phrases) {
         driver.findElement(By.cssSelector("input[id='search-page-box']")).click();
         driver.findElement(By.cssSelector("input[id='search-page-box']")).sendKeys(phrases);
